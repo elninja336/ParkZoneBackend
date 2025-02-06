@@ -31,7 +31,7 @@ class ParkingLot(models.Model):
     price = models.IntegerField()
 
     def __str__(self):
-        return f"Slot: {self.slotNumber} is {"Temporary" if self.category== "T" else "Parmanent"}"
+        return f"Slot: {self.slotNumber} is {"Temporary" if self.category== "TEMPORARY" else "Parmanent"}"
 
 
 class Reservation(models.Model):
