@@ -30,8 +30,8 @@ class ParkingLot(models.Model):
     availability = models.CharField(choices=AVAILABILITY_CHOICES, default="AVAILABLE",max_length=100)
     price = models.IntegerField()
 
-    def __str__(self):
-        return f"Slot: {self.slotNumber} is {"Temporary" if self.category== "TEMPORARY" else "Parmanent"}"
+    # def __str__(self):
+    #     return f"Slot: {self.slotNumber} is {"Temporary" if self.category== "TEMPORARY" else "Parmanent"}"
 
 
 class Reservation(models.Model):
