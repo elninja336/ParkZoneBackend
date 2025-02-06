@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_simplejwt',
     'corsheaders',
-    'dj_database_url'
+    'dj_database_url',
+    # 'whitenoise'
 
 ]
 
