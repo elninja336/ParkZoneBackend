@@ -4,12 +4,12 @@ from .settings import *
 from .settings import BASE_DIR
 
 
-ALLOWED_HOSTS =[os.environ['WEBSITE_HOSTNAME']]
+ALLOWED_HOSTS =(os.environ['WEBSITE_HOSTNAME'])
 CRS_TRUSTED_ORIGIN =['https://'+os.environ['WEBSITE_HOSTNAME']]
 
 DEBUG = False
 
-SECRET_KEY = os.environ.get['SECRET_KEY']
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # Security setting for production
 MIDDLEWARE = [
