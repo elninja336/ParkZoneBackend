@@ -61,4 +61,4 @@ class Payment(models.Model):
     payment_status = models.CharField(max_length=20, default='Pending')  # Successful or Failed
 
     def __str__(self):
-        return f"Payment for Reservation {self.reservation.id}"
+        return f"Payment for Reservation {self.reservation.id}- ({self.payment_status})"
