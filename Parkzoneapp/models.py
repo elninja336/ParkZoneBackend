@@ -46,7 +46,7 @@ class Reservation(models.Model):
     reservationDate = models.DateField(auto_now=True)
     startDate = models.DateField()
     endDate = models.DateField()
-    status =models.CharField(choices=STATUS_CHOICES, default="P",max_length=100)
+    status =models.CharField(choices=STATUS_CHOICES, default="PENDING",max_length=100)
 
     def __str__(self):
         return f"Reservation {self.id} done by {self.customer.name}"

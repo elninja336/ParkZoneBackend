@@ -12,13 +12,25 @@ class ParkingLotSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class ReservationSerializer(serializers.ModelSerializer):
-    # customer = serializers.SlugRelatedField(slug_field='')
+    customer = serializers.SlugRelatedField(
+        queryset = Customer.objects.all(),
+        slug_field = 'email'
+    )
+    parkingLot = serializers.SlugRelatedField(
+        queryset = ParkingLot.objects.all(),
+        slug_field = 'slotNumber'
+    )
     class Meta:
         model = Reservation
         fields = '__all__'
 
 
 class PaymentSerializer(serializers.ModelSerializer):
+    customer = serializers.SlugRelatedField(
+        queryset = Customer.objects.all(),
+        slug_field = 'email'
+    )
+    
     class Meta:
         model = Payment
         fields = '__all__'
