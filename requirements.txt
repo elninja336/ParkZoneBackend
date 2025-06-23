@@ -17,3 +17,4 @@ virtualenv==20.28.0
 whitenoise==6.8.2
 gunicorn
 dj-database-url>=1.0.0
+uvicorn
