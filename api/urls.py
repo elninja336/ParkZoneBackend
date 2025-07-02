@@ -21,6 +21,9 @@ urlpatterns = [
     path('payments/<int:id>',views.manage_Payment),
     # path('customer/<int:id>',views.cusustomer_view)
 
+    path('customers/login', views.CustomerLoginAPIView.as_view(), name='customer_login_api'),
+
+
     
     # path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     # path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),

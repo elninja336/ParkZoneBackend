@@ -3,6 +3,7 @@ from django.shortcuts import render
 from .models import *
 from .serializer import *
 from rest_framework.response import Response
+from rest_framework.views import APIView
 from rest_framework import status
 # Simple_jwt security features
 # from rest_framework.permissions import IsAuthenticated
@@ -162,3 +163,33 @@ manage_Payment = generic_api(Payment, PaymentSerializer)
 #     return JsonResponse({"error": "Invalid request method"}, status=400)
 
   
+
+
+
+#Login view for customer
+
+class CustomerLoginAPIView(APIView):
+    def post(self, request):
+        serializer = CustomerLoginSerializer(data=request.data)
+        if serializer.is_valid():
+            email = serializer.validated_data['email']
+            password = serializer.validated_data['password']
+
+            try:
+                customer = Customer.objects.get(email=email)
+                if customer.password == password:
+                    return Response({
+                        'message': 'Login successful',
+                        'customer_id': customer.id,
+                        'name': customer.name,
+                        'email': customer.email,
+                        'phone': customer.phone,
+                        'residence': customer.residence,
+                    })
+                else:
+                    return Response({'error': 'Invalid password'}, status=status.HTTP_401_UNAUTHORIZED)
+            except Customer.DoesNotExist:
+                return Response({'error': 'Customer not found'}, status=status.HTTP_404_NOT_FOUND)
+
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
