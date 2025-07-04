@@ -1,10 +1,9 @@
 from Parkzoneapp import views
 from django.urls import path
-# from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
+from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 
 urlpatterns = [
-    # path('customer/',views.get_and_post),
     # CUSTOMER API'S
     path('customers/',views.manage_customer),
     path('customers/<int:id>',views.manage_customer),
@@ -25,6 +24,6 @@ urlpatterns = [
 
 
     
-    # path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
-    # path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 ]
