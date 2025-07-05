@@ -54,12 +54,9 @@ All requests are handled through `axiosInstance.js` pointing to the backend base
 
 ## ⚙️ BACKEND (Django + Django REST Framework)
 
-### 📁 Location
-```
-/backend
-```
 
-### 🚀 Setup Instructions
+
+###  Setup Instructions
 ```bash
 cd backend
 python -m venv venv
@@ -80,7 +77,7 @@ python manage.py runserver
 
 ---
 
-## 📡 API ENDPOINTS
+##  API ENDPOINTS
 
 ### 🔐 Auth
 | Method | Endpoint                    | Description                          |
@@ -113,7 +110,7 @@ python manage.py runserver
 | PUT    | `/api/reservations/<id>/`      | Update reservation              |
 | DELETE | `/api/reservations/<id>/`      | Cancel reservation              |
 
-### 💳 Payments *(optional if used)*
+### 💳 Payments 
 | Method | Endpoint                    | Description                    |
 |--------|-----------------------------|--------------------------------|
 | GET    | `/api/payments/`            | List all payments              |
@@ -130,7 +127,7 @@ python manage.py runserver
 
 ---
 
-## 📝 Future Enhancements
+##  Future Enhancements
 - Password reset for customers
 - Email notifications
 - Payment integration (mobile money, PayPal)
@@ -140,5 +137,4 @@ python manage.py runserver
 ---
 
 ## 👨‍💻 Developed By
-- Abdillah Ali Khamis & Team  
-- University Project – Semester 3
+- Abdillah Ali Khamis & Fatma Suleiman  
